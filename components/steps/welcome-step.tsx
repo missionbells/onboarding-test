@@ -37,14 +37,6 @@ export function WelcomeStep({ onNext }: WelcomeStepProps) {
             <span className="font-semibold">Secure platform</span> with industry-leading security
           </p>
         </div>
-        <div className="flex items-start gap-3">
-          <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-1 flex-shrink-0">
-            <div className="w-2 h-2 rounded-full bg-primary" />
-          </div>
-          <p className="text-sm text-foreground text-left">
-            <span className="font-semibold">Zero fees</span> to get started investing
-          </p>
-        </div>
       </div>
 
       <Button onClick={onNext} size="lg" className="w-full group bg-primary hover:bg-primary/90">
