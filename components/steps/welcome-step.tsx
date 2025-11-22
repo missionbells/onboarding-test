@@ -14,7 +14,7 @@ export function WelcomeStep({ onNext }: WelcomeStepProps) {
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent">
           <span className="text-2xl font-bold text-primary-foreground">₹</span>
         </div>
-        <h1 className="text-4xl font-bold tracking-tight text-foreground">Hello wealth</h1>
+        <h1 className="text-4xl font-bold tracking-tight text-foreground">Hello finances</h1>
         <p className="text-lg text-muted-foreground leading-relaxed">
           Start your journey to financial freedom with intelligent investing tools designed for everyone.
         </p>
