@@ -8,12 +8,12 @@ interface CompletionStepProps {
 export function CompletionStep({ userData }: CompletionStepProps) {
   return (
     <div className="space-y-8 text-center">
-      <div className="space-y-4">
+        <div className="space-y-4">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent animate-pulse">
           <CheckCircle2 className="w-8 h-8 text-primary-foreground" />
         </div>
         <div className="space-y-2">
-          <h1 className="text-4xl font-bold text-foreground">You&apos;re all set!</h1>
+            <h1 className="text-4xl font-bold text-foreground">Thank you</h1>
           <p className="text-lg text-muted-foreground">Welcome to your investment journey, {userData.name}</p>
         </div>
       </div>
