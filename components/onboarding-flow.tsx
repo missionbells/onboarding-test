@@ -7,14 +7,16 @@ import { VerificationStep } from "./steps/verification-step"
 import { PreferencesStep } from "./steps/preferences-step"
 import { CompletionStep } from "./steps/completion-step"
 
+const INITIAL_USER_DATA = {
+  name: "",
+  email: "",
+  country: "",
+  investmentGoal: "",
+}
+
 export function OnboardingFlow() {
   const [currentStep, setCurrentStep] = useState(0)
-  const [userData, setUserData] = useState({
-    name: "",
-    email: "",
-    country: "",
-    investmentGoal: "",
-  })
+  const [userData, setUserData] = useState(INITIAL_USER_DATA)
 
   const steps = [
     { id: "welcome", label: "Welcome" },
@@ -33,6 +35,11 @@ export function OnboardingFlow() {
 
   const handleBack = () => {
     setCurrentStep((prev) => Math.max(prev - 1, 0))
+  }
+
+  const handleRestart = () => {
+    setUserData({ ...INITIAL_USER_DATA })
+    setCurrentStep(0)
   }
 
   return (
@@ -76,7 +83,7 @@ export function OnboardingFlow() {
           {currentStep === 1 && <ProfileStep onNext={handleNext} onBack={handleBack} initialData={userData} />}
           {currentStep === 2 && <VerificationStep onNext={handleNext} onBack={handleBack} />}
           {currentStep === 3 && <PreferencesStep onNext={handleNext} onBack={handleBack} initialData={userData} />}
-          {currentStep === 4 && <CompletionStep userData={userData} />}
+          {currentStep === 4 && <CompletionStep userData={userData} onRestart={handleRestart} />}
         </div>
       </div>
     </div>

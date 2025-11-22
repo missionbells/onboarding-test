@@ -3,9 +3,10 @@ import { CheckCircle2, ArrowRight } from "lucide-react"
 
 interface CompletionStepProps {
   userData: Record<string, any>
+  onRestart: () => void
 }
 
-export function CompletionStep({ userData }: CompletionStepProps) {
+export function CompletionStep({ userData, onRestart }: CompletionStepProps) {
   return (
     <div className="space-y-8 text-center">
       <div className="space-y-4">
@@ -42,7 +43,7 @@ export function CompletionStep({ userData }: CompletionStepProps) {
         </div>
       </div>
 
-      <Button size="lg" className="w-full bg-primary hover:bg-primary/90 group">
+      <Button size="lg" className="w-full bg-primary hover:bg-primary/90 group" onClick={onRestart}>
         Go to dashboard
         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
       </Button>
