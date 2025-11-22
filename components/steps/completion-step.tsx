@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, ArrowRight } from "lucide-react"
 
@@ -42,10 +44,12 @@ export function CompletionStep({ userData }: CompletionStepProps) {
         </div>
       </div>
 
-      <Button size="lg" className="w-full bg-primary hover:bg-primary/90 group">
-        Go to dashboard
-        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-      </Button>
+        <Button asChild size="lg" className="w-full bg-primary hover:bg-primary/90 group">
+          <Link href="/dashboard">
+            Go to dashboard
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+        </Button>
 
       <p className="text-xs text-muted-foreground">Your account is secure and ready to use</p>
     </div>
